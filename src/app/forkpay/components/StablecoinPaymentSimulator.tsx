@@ -231,7 +231,7 @@ export default function StablecoinPaymentSimulator() {
             </h4>
           </div>
           <span className="text-[9px] font-mono bg-muted text-accent font-semibold px-2 py-0.5 border border-border-muted">
-            LIVE FEED
+            SANDBOX LOGS
           </span>
         </div>
 

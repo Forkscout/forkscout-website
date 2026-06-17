@@ -25,15 +25,15 @@ interface LogLine {
 }
 
 const MOCK_MESSAGES = [
-  { msg: "Scanned Raydium liquidity pool SOL-USDC... Spread 0.04%", type: "info" },
-  { msg: "Cross-dex spread detected: Uniswap vs Curve. EURC price delta 0.0012 USDC", type: "info" },
-  { msg: "MEV Bundle sent: Buy Raydium, Sell Orca. Capital allocation: 100 USDC", type: "info" },
-  { msg: "SWAP SUCCESS: Arbitrage executed on-chain. Profit +1.44 USDC (Net: +1.12 USDC after gas tip)", type: "success" },
-  { msg: "MEV Sandwich scan: Target swap transaction detected. Preparing frontrun pool transaction...", type: "warn" },
-  { msg: "SWAP SUCCESS: Sandwich frontrun executed. Profit +2.88 USDC. Tx: 0x7fa...9902", type: "success" },
-  { msg: "Checking Solana RPC node latency... 12ms. Blocks syncing normal.", type: "info" },
-  { msg: "Gas priority update: Gas limit auto-scaled to 15 gwei. Sync state active.", type: "info" },
-  { msg: "Grid Trading Bot: SOL price reached $142.12. Executed sell limit order ID #9088", type: "success" }
+  { msg: "[SANDBOX] Scanned Raydium liquidity pool SOL-USDC... Spread 0.04%", type: "info" },
+  { msg: "[SANDBOX] Cross-dex spread detected: Uniswap vs Curve. EURC price delta 0.0012 USDC", type: "info" },
+  { msg: "[SANDBOX] MEV Bundle sent: Buy Raydium, Sell Orca. Capital allocation: 100 USDC", type: "info" },
+  { msg: "[SIMULATION] SWAP SUCCESS: Arbitrage executed. Profit +1.44 USDC (Net: +1.12 USDC after gas tip)", type: "success" },
+  { msg: "[SANDBOX] MEV Sandwich scan: Target swap transaction detected. Preparing frontrun pool...", type: "warn" },
+  { msg: "[SIMULATION] SWAP SUCCESS: Sandwich frontrun executed. Profit +2.88 USDC. Tx: 0x7fa...9902", type: "success" },
+  { msg: "[SANDBOX] Checking Solana RPC node latency... 12ms. Blocks syncing normal.", type: "info" },
+  { msg: "[SANDBOX] Gas priority update: Gas limit auto-scaled to 15 gwei. Sync state active.", type: "info" },
+  { msg: "[SIMULATION] Grid Trading Bot: SOL price reached $142.12. Executed sell limit order ID #9088", type: "success" }
 ];
 
 export default function TradingTerminalLogs() {

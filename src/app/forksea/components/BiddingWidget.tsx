@@ -105,7 +105,7 @@ export default function BiddingWidget() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:16px_16px]" />
           
           <span className="self-end px-2 py-0.5 border border-white/20 bg-black/40 text-[9px] font-mono text-cyan-400 font-bold uppercase tracking-wider rounded">
-            ERC-721 Live Auction
+            ERC-721 Sandbox Auction
           </span>
 
           <div className="z-10 flex items-center justify-center text-4xl mb-4 select-none group-hover:scale-105 transition-transform duration-300">

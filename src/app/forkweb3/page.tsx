@@ -110,7 +110,7 @@ export default function Forkweb3Page() {
               </span>
             </div>
             <p className="text-md sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              Automated smart-contract trading execution. Spin up arbitrage bots across Raydium and Uniswap liquidity pools, allocate capital assets, and track transaction ledgers via live streams.
+              Automated smart-contract trading execution. Spin up arbitrage bots across Raydium and Uniswap liquidity pools, allocate capital assets, and track transaction ledgers via simulated streams.
             </p>
           </div>
         </div>

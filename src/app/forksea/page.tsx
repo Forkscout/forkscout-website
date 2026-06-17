@@ -86,7 +86,7 @@ export default function ForkseaPage() {
         <div className="flex items-center gap-3 mb-6">
           <span className="text-xs font-mono border border-border px-2 py-0.5 uppercase">A</span>
           <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-muted-foreground">
-            Live Auction & Bidding Simulator
+            Simulated Auction & Bidding Sandbox
           </h2>
         </div>
         
