@@ -101,12 +101,6 @@ export default function Footer() {
           </h4>
           <ul className="space-y-2 text-xs font-mono">
             <li>
-              <a href="https://codegotech.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors flex items-center gap-1">
-                <span>Theme Inspiration</span>
-                <ExternalLink size={12} />
-              </a>
-            </li>
-            <li>
               <Link href="/" className="text-muted-foreground hover:text-accent transition-colors">
                 Whitepaper (Draft)
               </Link>
