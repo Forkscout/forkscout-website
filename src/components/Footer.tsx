@@ -15,20 +15,20 @@
 
 import React from "react";
 import Link from "next/link";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail } from "lucide-react";
 import ForkscoutLogo from "@/components/Logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-background border-t border-border mt-16 py-12 transition-colors duration-300">
+    <footer className="w-full bg-background border-t border-white/5 mt-16 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Left Brand Col */}
         <div className="flex flex-col gap-3">
-          <Link href="/" className="font-display font-black text-2xl tracking-tighter flex items-center gap-2 select-none">
-            <ForkscoutLogo size={28} className="text-foreground" />
-            <span>FORKSCOUT</span>
+          <Link href="/" className="font-display font-black text-xl tracking-tight flex items-center gap-2 select-none">
+            <ForkscoutLogo size={24} className="text-foreground" />
+            <span className="text-white tracking-widest text-sm font-black">FORKSCOUT</span>
           </Link>
-          <p className="text-xs text-muted-foreground font-mono leading-relaxed">
+          <p className="text-xs text-zinc-400 font-mono leading-relaxed">
             Autonomous agentic workflows and decentralized finance interfaces. Integrating cognitive AI layers with Web3 protocols.
           </p>
           <div className="flex gap-3 mt-2">
@@ -36,7 +36,7 @@ export default function Footer() {
               href="https://github.com/Forkscout"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border border-border-muted hover:bg-muted text-muted-foreground hover:text-accent transition-colors flex items-center justify-center"
+              className="p-2 border border-white/5 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-accent transition-colors flex items-center justify-center cursor-pointer"
               aria-label="Github"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,7 +48,7 @@ export default function Footer() {
               href="https://x.com/fork_scout"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border border-border-muted hover:bg-muted text-muted-foreground hover:text-accent transition-colors flex items-center justify-center"
+              className="p-2 border border-white/5 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-accent transition-colors flex items-center justify-center cursor-pointer"
               aria-label="Twitter"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -57,38 +57,38 @@ export default function Footer() {
             </a>
             <a
               href="mailto:info@forkscout.com"
-              className="p-2 border border-border-muted hover:bg-muted text-muted-foreground hover:text-accent transition-colors flex items-center justify-center"
+              className="p-2 border border-white/5 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-accent transition-colors flex items-center justify-center cursor-pointer"
               aria-label="Email"
             >
-              <Mail size={16} />
+              <Mail size={16} className="text-zinc-400" />
             </a>
           </div>
         </div>
 
         {/* Links Col 1: Products */}
         <div>
-          <h4 className="text-xs font-mono font-bold uppercase tracking-wider mb-4 border-b border-border pb-1">
+          <h4 className="text-xs font-mono font-bold uppercase tracking-wider mb-4 border-b border-white/5 pb-1 text-white">
             Products Index
           </h4>
           <ul className="space-y-2 text-xs font-mono">
             <li>
-              <Link href="/forkpay" className="text-muted-foreground hover:text-accent transition-colors">
-                P.01 Forkpay (Neo-Bank)
+              <Link href="/forkpay" className="text-zinc-400 hover:text-accent transition-colors">
+                Forkpay (Stablecoin Cards)
               </Link>
             </li>
             <li>
-              <Link href="/forksea" className="text-muted-foreground hover:text-accent transition-colors">
-                P.02 Forksea (NFT Market)
+              <Link href="/forksea" className="text-zinc-400 hover:text-accent transition-colors">
+                Forksea (NFT Marketplace)
               </Link>
             </li>
             <li>
-              <Link href="/forkweb3" className="text-muted-foreground hover:text-accent transition-colors">
-                P.03 Forkweb3 (DEX Bots)
+              <Link href="/forkweb3" className="text-zinc-400 hover:text-accent transition-colors">
+                Forkweb3 (DEX Trading Bots)
               </Link>
             </li>
             <li>
-              <Link href="/forkagent" className="text-muted-foreground hover:text-accent transition-colors">
-                P.04 Forkagent (AI Agent)
+              <Link href="/forkagent" className="text-zinc-400 hover:text-accent transition-colors">
+                Forkagent (AI Agent Workspaces)
               </Link>
             </li>
           </ul>
@@ -96,22 +96,22 @@ export default function Footer() {
 
         {/* Links Col 2: Info */}
         <div>
-          <h4 className="text-xs font-mono font-bold uppercase tracking-wider mb-4 border-b border-border pb-1">
+          <h4 className="text-xs font-mono font-bold uppercase tracking-wider mb-4 border-b border-white/5 pb-1 text-white">
             Company & Tech
           </h4>
           <ul className="space-y-2 text-xs font-mono">
             <li>
-              <Link href="/" className="text-muted-foreground hover:text-accent transition-colors">
+              <Link href="/" className="text-zinc-400 hover:text-accent transition-colors">
                 Whitepaper (Draft)
               </Link>
             </li>
             <li>
-              <Link href="/" className="text-muted-foreground hover:text-accent transition-colors">
+              <Link href="/" className="text-zinc-400 hover:text-accent transition-colors">
                 System Documentation
               </Link>
             </li>
             <li>
-              <Link href="/" className="text-muted-foreground hover:text-accent transition-colors">
+              <Link href="/" className="text-zinc-400 hover:text-accent transition-colors">
                 Developer API
               </Link>
             </li>
@@ -120,19 +120,19 @@ export default function Footer() {
 
         {/* Left Compliance/Newsletter Col */}
         <div>
-          <h4 className="text-xs font-mono font-bold uppercase tracking-wider mb-4 border-b border-border pb-1">
+          <h4 className="text-xs font-mono font-bold uppercase tracking-wider mb-4 border-b border-white/5 pb-1 text-white">
             Regulatory Details
           </h4>
-          <p className="text-xs text-muted-foreground font-mono leading-relaxed">
+          <p className="text-xs text-zinc-400 font-mono leading-relaxed">
             Forkscout operates as a decentralized autonomous developer organization. Forkpay stablecoin solutions leverage non-custodial smart contracts and BIN-sponsored EMI partners (PSD2 & PCI DSS compliant rails).
           </p>
-          <div className="mt-4 text-[10px] font-mono text-muted-foreground uppercase border-t border-border-muted pt-2 flex justify-between">
+          <div className="mt-4 text-[10px] font-mono text-zinc-500 uppercase border-t border-white/5 pt-2 flex justify-between">
             <span>VOL. I · EST 2026</span>
             <span className="text-accent font-bold">● ACTIVE</span>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-border-muted flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono text-muted-foreground gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono text-zinc-500 gap-4">
         <span>© 2026 FORKSCOUT. ALL RIGHTS RESERVED.</span>
         <div className="flex gap-4">
           <Link href="/privacy" className="hover:text-accent transition-colors">PRIVACY POLICY</Link>

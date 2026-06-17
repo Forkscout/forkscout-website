@@ -2,12 +2,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #ffffff; /* Light Mode default */
   --foreground: #111111;
-  --accent: #ea580c; /* High contrast orange-red */
+  --accent: #ea580c; /* High contrast orange-red for Light Mode */
   --accent-foreground: #ffffff;
-  --border: #111111; /* Strong black borders for editorial style */
-  --border-muted: #e5e7eb;
+  --border: #e5e7eb;
+  --border-muted: #f3f4f6;
   --muted: #f4f4f5;
   --muted-foreground: #71717a;
   --card: #fafafa;
@@ -19,15 +19,15 @@
 }
 
 .dark {
-  --background: #000000; /* Pure black background */
+  --background: #000000; /* Dark Mode default - Pure Black */
   --foreground: #f4f4f5;
-  --accent: #00f0ff; /* Electric cyan accent */
+  --accent: #00f0ff; /* Electric cyan accent for Dark Mode */
   --accent-foreground: #000000;
-  --border: #f4f4f5; /* Strong white borders for dark editorial style */
-  --border-muted: #27272a;
-  --muted: #0c0c0e;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-muted: rgba(255, 255, 255, 0.04);
+  --muted: #09090b;
   --muted-foreground: #a1a1aa;
-  --card: #09090b;
+  --card: rgba(9, 9, 11, 0.4);
   --card-foreground: #f4f4f5;
 }
 
@@ -48,16 +48,17 @@
   --font-mono: var(--font-mono);
 }
 
-/* Base Editorial Layout Rules */
+/* Base Body Styling */
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Custom Scrollbar for premium feel */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -66,42 +67,84 @@ body {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-muted);
+  background: rgba(128, 128, 128, 0.2);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
 
-/* Marquee / Ticker Keyframes */
-@keyframes ticker-slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+/* ─── Premium Ambient Glow & Glassmorphism Utilities ─── */
+
+/* Glow Blobs */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(140px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  transition: all 0.5s ease;
 }
 
-.ticker-strip {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: ticker-slide 30s linear infinite;
+.glow-cyan {
+  background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
 }
 
-.ticker-strip:hover {
-  animation-play-state: paused;
+.glow-orange {
+  background: radial-gradient(circle, #ea580c 0%, transparent 70%);
 }
 
-/* Custom Glassmorphism utility */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+/* Glass Cards */
+.glass-card {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
 }
 
-.dark .glass {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg, rgba(255,255,255,0.03) 0%, transparent 50%, rgba(255,255,255,0.01) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 240, 255, 0.01);
+}
+
+.dark .glass-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 240, 255, 0.02);
+}
+
+.glass-card-hover-accent:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 240, 255, 0.02);
+}
+
+.dark .glass-card-hover-accent:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 240, 255, 0.04);
+}
+
+/* Bento Grid Alignment Helpers */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* Clean, crisp gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 30%, var(--muted-foreground) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

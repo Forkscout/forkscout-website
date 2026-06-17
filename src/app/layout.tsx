@@ -15,7 +15,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-context";
-import Ticker from "@/components/Ticker";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -45,9 +44,6 @@ export default function RootLayout({
     <html lang="en" className="h-full select-text antialiased">
       <body className="min-h-full flex flex-col transition-colors duration-300">
         <ThemeProvider>
-          {/* Scrolling top news ticker */}
-          <Ticker />
-          
           {/* Main header navbar */}
           <Nav />
           
