@@ -19,6 +19,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/lib/theme-context";
 import { Sun, Moon, Menu, X, ArrowUpRight } from "lucide-react";
+import ForkscoutLogo from "@/components/Logo";
 
 export default function Nav() {
   const { theme, toggleTheme } = useTheme();
@@ -38,7 +39,7 @@ export default function Nav() {
         {/* Brand logo */}
         <div className="flex items-center gap-4">
           <Link href="/" className="font-display font-extrabold text-2xl tracking-tighter flex items-center gap-2 select-none">
-            <img src="/logo.png" alt="Forkscout Logo" className="w-6 h-6 object-contain dark:invert" />
+            <ForkscoutLogo size={26} className="text-foreground" />
             <span>FORKSCOUT</span>
             <span className="text-xs font-mono font-medium px-1.5 py-0.5 border border-border text-accent bg-muted uppercase tracking-widest">
               org
