@@ -18,7 +18,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ChevronDown, Check, X, Shield, Cpu, Code, Layers, Sparkles, CreditCard, Landmark, Coins } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Check, X, Shield, Cpu, Code, Layers, Sparkles, CreditCard, Landmark, Coins, Bot, Gem } from "lucide-react";
 import ConsensusConsole from "@/components/ConsensusConsole";
 import { GlowCard } from "@/components/ui/spotlight-card";
 
@@ -41,7 +41,7 @@ export default function HomePage() {
       tag: "Q3 2026",
       size: "col-span-12 md:col-span-7",
       accent: "from-cyan-500/5 to-indigo-500/5",
-      icon: <CreditCard className="w-8 h-8 text-cyan-500" />
+      icon: <CreditCard className="w-8 h-8 text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.4)] group-hover:text-cyan-300 transition-colors" />
     },
     {
       num: "02",
@@ -51,7 +51,7 @@ export default function HomePage() {
       tag: "Q4 2026",
       size: "col-span-12 md:col-span-5",
       accent: "from-purple-500/5 to-pink-500/5",
-      icon: <Coins className="w-8 h-8 text-purple-500" />
+      icon: <Gem className="w-8 h-8 text-purple-400 drop-shadow-[0_0_10px_rgba(192,132,252,0.4)] group-hover:text-purple-300 transition-colors" />
     },
     {
       num: "03",
@@ -61,7 +61,7 @@ export default function HomePage() {
       tag: "Q1 2027",
       size: "col-span-12 md:col-span-5",
       accent: "from-orange-500/5 to-red-500/5",
-      icon: <Cpu className="w-8 h-8 text-orange-500" />
+      icon: <Cpu className="w-8 h-8 text-orange-400 drop-shadow-[0_0_10px_rgba(251,146,60,0.4)] group-hover:text-orange-300 transition-colors" />
     },
     {
       num: "04",
@@ -71,7 +71,7 @@ export default function HomePage() {
       tag: "Q2 2027",
       size: "col-span-12 md:col-span-7",
       accent: "from-emerald-500/5 to-teal-500/5",
-      icon: <Sparkles className="w-8 h-8 text-emerald-500" />
+      icon: <Bot className="w-8 h-8 text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)] group-hover:text-emerald-300 transition-colors" />
     }
   ];
 
@@ -236,8 +236,19 @@ export default function HomePage() {
                   className={`p-8 flex flex-col justify-between min-h-[300px] h-full hover:translate-y-0 bg-gradient-to-b ${prod.accent}`}
                 >
                   <div className="flex justify-between items-start z-10">
-                    <div className="p-3 bg-muted border border-border rounded-2xl group-hover:border-accent/40 transition-colors">
-                      {prod.icon}
+                    <div className="relative p-4 rounded-2xl border border-white/[0.08] dark:border-white/[0.08] border-black/[0.05] bg-muted/60 transition-all duration-300 flex items-center justify-center overflow-hidden">
+                      {/* Inner ambient glow relative to the product color */}
+                      <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${
+                        idx === 0 ? "from-cyan-500" : idx === 1 ? "from-purple-500" : idx === 2 ? "from-orange-500" : "from-emerald-500"
+                      } to-transparent`} />
+                      
+                      <div className="relative z-10 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                        {prod.icon}
+                      </div>
+
+                      {/* Micro-cyberpunk accent brackets */}
+                      <div className="absolute top-1 left-1 w-1.5 h-1.5 border-t border-l border-foreground/20 rounded-tl" />
+                      <div className="absolute bottom-1 right-1 w-1.5 h-1.5 border-b border-r border-foreground/20 rounded-br" />
                     </div>
                     <span className="px-3 py-1 bg-muted border border-border rounded-full text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
                       {prod.tag}
@@ -323,8 +334,13 @@ export default function HomePage() {
                 className="p-6 flex flex-col gap-4 hover:translate-y-0"
               >
                 <div className="flex items-center gap-3 z-10">
-                  <div className="p-2 bg-muted border border-border rounded-lg text-accent">
-                    {comp.icon}
+                  <div className="relative p-2.5 bg-muted border border-border rounded-xl text-accent flex items-center justify-center overflow-hidden">
+                    <div className="relative z-10 drop-shadow-[0_0_8px_rgba(0,240,255,0.3)]">
+                      {comp.icon}
+                    </div>
+                    {/* Cyberpunk corner accents */}
+                    <div className="absolute top-1.5 left-1.5 w-1 h-1 border-t border-l border-accent/30 rounded-tl" />
+                    <div className="absolute bottom-1.5 right-1.5 w-1 h-1 border-b border-r border-accent/30 rounded-br" />
                   </div>
                   <h3 className="text-sm font-mono font-bold text-foreground uppercase">{comp.metric}</h3>
                 </div>
