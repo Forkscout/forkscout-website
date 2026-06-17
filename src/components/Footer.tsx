@@ -135,11 +135,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-border-muted flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono text-muted-foreground gap-4">
         <span>© 2026 FORKSCOUT. ALL RIGHTS RESERVED.</span>
         <div className="flex gap-4">
-          <a href="#" className="hover:text-accent transition-colors">PRIVACY POLICY</a>
+          <Link href="/privacy" className="hover:text-accent transition-colors">PRIVACY POLICY</Link>
           <span>·</span>
-          <a href="#" className="hover:text-accent transition-colors">TERMS OF SERVICE</a>
+          <Link href="/terms" className="hover:text-accent transition-colors">TERMS OF SERVICE</Link>
           <span>·</span>
-          <a href="#" className="hover:text-accent transition-colors">COOKIE SETTINGS</a>
+          <Link href="/cookies" className="hover:text-accent transition-colors">COOKIE SETTINGS</Link>
         </div>
       </div>
     </footer>
