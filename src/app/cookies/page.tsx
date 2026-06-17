@@ -44,7 +44,7 @@ export default function CookieSettings() {
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-xs font-mono text-muted-foreground uppercase mt-6 pt-4 border-t border-border-muted">
           <span>LAST UPDATED: JUNE 17, 2026</span>
           <span>REVISION: V1.0</span>
-          <span>ISSUED BY: FORKSCOUT GROUP LTD.</span>
+          <span>ISSUED BY: FORKSCOUT</span>
         </div>
       </header>
 

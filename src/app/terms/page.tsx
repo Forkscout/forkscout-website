@@ -44,7 +44,7 @@ export default function TermsOfService() {
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-xs font-mono text-muted-foreground uppercase mt-6 pt-4 border-t border-border-muted">
           <span>LAST UPDATED: JUNE 17, 2026</span>
           <span>REVISION: V1.0</span>
-          <span>ISSUED BY: FORKSCOUT GROUP LTD.</span>
+          <span>ISSUED BY: FORKSCOUT</span>
         </div>
       </header>
 
@@ -104,7 +104,7 @@ export default function TermsOfService() {
           </h2>
           <div className="md:col-span-3 space-y-4">
             <p>
-              These Terms of Service shall be governed by and construed in accordance with the laws of the jurisdiction of incorporation of Forkscout Group Ltd., without giving effect to conflicts of law principles.
+              These Terms of Service shall be governed by and construed in accordance with the laws of the jurisdiction of Forkscout, without giving effect to conflicts of law principles.
             </p>
           </div>
         </section>

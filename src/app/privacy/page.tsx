@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
         <div className="flex flex-wrap gap-x-8 gap-y-2 text-xs font-mono text-muted-foreground uppercase mt-6 pt-4 border-t border-border-muted">
           <span>EFFECTIVE DATE: JUNE 17, 2026</span>
           <span>REVISION: V1.0</span>
-          <span>ISSUED BY: FORKSCOUT GROUP LTD.</span>
+          <span>ISSUED BY: FORKSCOUT</span>
         </div>
       </header>
 
@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
           </h2>
           <div className="md:col-span-3 space-y-4">
             <p>
-              Forkscout Group Ltd. ("Forkscout", "we", "our") is dedicated to developing transparent, non-custodial decentralized applications and cognitive AI agent workspaces. This Privacy Policy details how we handle information across our products: **Forkpay, Forksea, Forkweb3, and Forkagent**.
+              Forkscout ("we", "our") is dedicated to developing transparent, non-custodial decentralized applications and cognitive AI agent workspaces. This Privacy Policy details how we handle information across our products: **Forkpay, Forksea, Forkweb3, and Forkagent**.
             </p>
             <p>
               As a decentralized project, we prioritize user privacy. We do not track personal identifying information, IP addresses, or wallet balances unless explicitly provided by you for customer support or beta access registration.
