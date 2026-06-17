@@ -23,10 +23,10 @@ export default function HomePage() {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   const stats = [
-    { label: "(A) Stablecoin Card Volume", value: "$42.8M", desc: "Settled on-chain" },
-    { label: "(B) NFT Marketplace Items", value: "112,000+", desc: "Minted via Forksea" },
-    { label: "(C) Active Arbitrage Bots", value: "1,240", desc: "Simulated DEX run logs" },
-    { label: "(D) AI Cognitive Loops", value: "3.4M", desc: "Agent tasks executed" }
+    { label: "(A) Integrated Networks", value: "4+", desc: "Solana, Base, Arbitrum, Eth" },
+    { label: "(B) Settlement Assets", value: "USDC / USDT", desc: "Native multi-chain stablecoins" },
+    { label: "(C) Sandbox Simulators", value: "1,240+", desc: "Active DEX bot log runs" },
+    { label: "(D) AI Cognitive Trace", value: "3.4M+", desc: "Simulated agent tokens" }
   ];
 
   const products = [
