@@ -127,6 +127,18 @@ export default function HomePage() {
       <div className="glow-blob glow-orange bottom-[20%] right-[-10%] w-[600px] h-[600px]" />
       <div className="glow-blob glow-cyan top-[40%] left-[30%] w-[400px] h-[400px]" />
 
+      {/* ─── Hero Grid Background with Bottom Fading ─── */}
+      <div 
+        className="absolute top-0 inset-x-0 h-[800px] pointer-events-none z-0 opacity-40 dark:opacity-20 [mask-image:linear-gradient(to_bottom,white_40%,transparent_100%)]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(128,128,128,0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(128,128,128,0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: "45px 45px",
+        }}
+      />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-20">
         
         {/* ─── HERO SECTION ─── */}
