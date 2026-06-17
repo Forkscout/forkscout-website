@@ -74,14 +74,7 @@ export default function Nav() {
             {theme === "dark" ? <Sun size={18} className="text-accent" /> : <Moon size={18} className="text-accent" />}
           </button>
 
-          {/* Connect CTA */}
-          <Link
-            href="/forkagent"
-            className="hidden sm:flex items-center gap-1.5 px-4 py-2 border border-border text-sm font-mono font-bold hover:bg-accent hover:text-accent-foreground transition-all duration-300 group"
-          >
-            <span>CONNECT</span>
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </Link>
+
 
           {/* Mobile hamburger */}
           <button
@@ -110,14 +103,7 @@ export default function Nav() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/forkagent"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center gap-1.5 w-full py-2.5 border border-border text-sm font-mono font-bold hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-            >
-              <span>CONNECT PORTAL</span>
-              <ArrowUpRight size={14} />
-            </Link>
+
           </div>
         </div>
       )}
