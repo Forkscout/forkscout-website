@@ -29,7 +29,12 @@ export default function ConsensusConsole() {
     "Consensus engine ready."
   ]);
   const [isStressTest, setIsStressTest] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const logContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Auto-scroll terminal log to bottom without scrolling window
   useEffect(() => {
@@ -211,7 +216,7 @@ export default function ConsensusConsole() {
         <div className="flex flex-col">
           <span className="text-[9px] font-mono text-muted-foreground">BLOCK</span>
           <span className="text-sm font-mono font-bold text-foreground tracking-tight transition-all">
-            {blockHeight.toLocaleString()}
+            {mounted ? blockHeight.toLocaleString("en-US") : "47,459,500"}
           </span>
         </div>
         <div className="flex flex-col">
@@ -219,13 +224,13 @@ export default function ConsensusConsole() {
           <span className={`text-sm font-mono font-bold tracking-tight transition-all duration-300 ${
             isStressTest ? "text-red-500" : "text-accent"
           }`}>
-            {tps.toLocaleString()}
+            {mounted ? tps.toLocaleString("en-US") : "15"}
           </span>
         </div>
         <div className="flex flex-col">
           <span className="text-[9px] font-mono text-muted-foreground">LATENCY</span>
           <span className="text-sm font-mono font-bold text-foreground tracking-tight">
-            {latency}ms
+            {mounted ? `${latency}ms` : "120ms"}
           </span>
         </div>
       </div>
