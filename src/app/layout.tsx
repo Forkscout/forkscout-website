@@ -17,6 +17,10 @@ import "./globals.css";
 import { ThemeProvider } from "@/lib/theme-context";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Forkscout | AI & Web3 Decentralized Infrastructure",
@@ -41,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full select-text antialiased">
+    <html lang="en" className={cn("h-full select-text antialiased", "font-sans", geist.variable)}>
       <body className="min-h-full flex flex-col transition-colors duration-300">
         <ThemeProvider>
           {/* Main header navbar */}
