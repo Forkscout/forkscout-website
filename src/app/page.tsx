@@ -19,6 +19,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ChevronDown, Check, X, Shield, Cpu, Code, Layers, Sparkles, CreditCard, Landmark, Coins } from "lucide-react";
+import ConsensusConsole from "@/components/ConsensusConsole";
+import { GlowCard } from "@/components/ui/spotlight-card";
 
 export default function HomePage() {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
@@ -180,41 +182,29 @@ export default function HomePage() {
 
             {/* Graphic Badge */}
             <div className="lg:col-span-4 hidden lg:flex justify-center">
-              <div className="w-[320px] aspect-square rounded-3xl border border-border bg-muted/40 backdrop-blur-md p-6 flex flex-col justify-between shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-full blur-2xl" />
-                <div className="flex justify-between items-start">
-                  <div className="p-3 bg-muted border border-border rounded-xl">
-                    <Cpu className="w-6 h-6 text-accent" />
-                  </div>
-                  <span className="text-[10px] font-mono text-muted-foreground">BUILD ID: v92.0</span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <div className="h-1 bg-border rounded-full overflow-hidden">
-                    <div className="h-full bg-accent w-[78%] rounded-full" />
-                  </div>
-                  <div className="flex justify-between text-[10px] font-mono text-muted-foreground">
-                    <span>Consensus Engine</span>
-                    <span>Ready</span>
-                  </div>
-                </div>
-              </div>
+              <ConsensusConsole />
             </div>
           </div>
 
           {/* Stats Cards Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {stats.map((stat, idx) => (
-              <div key={idx} className="glass-card p-6 flex flex-col gap-2">
-                <span className="text-[10px] font-mono text-muted-foreground tracking-wider font-bold">
+              <GlowCard 
+                key={idx} 
+                glowColor="blue" 
+                customSize={true} 
+                className="p-6 flex flex-col gap-2 hover:translate-y-0 backdrop-blur-[16px]"
+              >
+                <span className="text-[10px] font-mono text-muted-foreground tracking-wider font-bold z-10">
                   {stat.label}
                 </span>
-                <span className="text-2xl sm:text-3xl font-display font-extrabold text-foreground">
+                <span className="text-2xl sm:text-3xl font-display font-extrabold text-foreground z-10">
                   {stat.value}
                 </span>
-                <span className="text-xs text-muted-foreground font-mono">
+                <span className="text-xs text-muted-foreground font-mono z-10">
                   {stat.desc}
                 </span>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </section>
@@ -238,28 +228,34 @@ export default function HomePage() {
               <Link
                 key={idx}
                 href={prod.href}
-                className={`group glass-card glass-card-hover-accent p-8 flex flex-col justify-between min-h-[300px] bg-gradient-to-b ${prod.accent} ${prod.size} cursor-pointer`}
+                className={`group ${prod.size} cursor-pointer block`}
               >
-                <div className="flex justify-between items-start">
-                  <div className="p-3 bg-muted border border-border rounded-2xl group-hover:border-accent/40 transition-colors">
-                    {prod.icon}
+                <GlowCard
+                  glowColor={idx % 2 === 0 ? "blue" : "purple"}
+                  customSize={true}
+                  className={`p-8 flex flex-col justify-between min-h-[300px] h-full hover:translate-y-0 bg-gradient-to-b ${prod.accent}`}
+                >
+                  <div className="flex justify-between items-start z-10">
+                    <div className="p-3 bg-muted border border-border rounded-2xl group-hover:border-accent/40 transition-colors">
+                      {prod.icon}
+                    </div>
+                    <span className="px-3 py-1 bg-muted border border-border rounded-full text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+                      {prod.tag}
+                    </span>
                   </div>
-                  <span className="px-3 py-1 bg-muted border border-border rounded-full text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-                    {prod.tag}
-                  </span>
-                </div>
 
-                <div className="flex flex-col gap-3 mt-12">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-accent font-bold">{prod.num}</span>
-                    <h3 className="text-xl font-display font-bold text-foreground group-hover:text-accent transition-colors">
-                      {prod.name}
-                    </h3>
+                  <div className="flex flex-col gap-3 mt-12 z-10">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono text-accent font-bold">{prod.num}</span>
+                      <h3 className="text-xl font-display font-bold text-foreground group-hover:text-accent transition-colors">
+                        {prod.name}
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground text-xs font-mono leading-relaxed">
+                      {prod.desc}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground text-xs font-mono leading-relaxed">
-                    {prod.desc}
-                  </p>
-                </div>
+                </GlowCard>
               </Link>
             ))}
           </div>
@@ -281,20 +277,25 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {products.map((prod, idx) => (
-              <div key={idx} className="glass-card p-6 flex flex-col justify-between min-h-[200px]">
-                <div className="flex justify-between items-center">
+              <GlowCard 
+                key={idx} 
+                glowColor="blue" 
+                customSize={true} 
+                className="p-6 flex flex-col justify-between min-h-[200px] hover:translate-y-0"
+              >
+                <div className="flex justify-between items-center z-10">
                   <span className="text-xs font-mono text-muted-foreground">PHASE 0{idx + 1}</span>
                   <span className="px-2 py-0.5 border border-accent/25 bg-accent/5 text-[9px] font-mono text-accent rounded-full">
                     {prod.tag}
                   </span>
                 </div>
-                <div className="flex flex-col gap-2 mt-8">
+                <div className="flex flex-col gap-2 mt-8 z-10">
                   <h4 className="text-sm font-mono font-bold text-foreground uppercase">{prod.name}</h4>
                   <p className="text-[11px] text-muted-foreground font-mono">
                     Sandbox environment deployment, wallet setups, and mock API endpoints.
                   </p>
                 </div>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </section>
@@ -315,15 +316,20 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {comparisons.map((comp, idx) => (
-              <div key={idx} className="glass-card p-6 flex flex-col gap-4">
-                <div className="flex items-center gap-3">
+              <GlowCard 
+                key={idx} 
+                glowColor="blue" 
+                customSize={true} 
+                className="p-6 flex flex-col gap-4 hover:translate-y-0"
+              >
+                <div className="flex items-center gap-3 z-10">
                   <div className="p-2 bg-muted border border-border rounded-lg text-accent">
                     {comp.icon}
                   </div>
                   <h3 className="text-sm font-mono font-bold text-foreground uppercase">{comp.metric}</h3>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 text-xs font-mono border-t border-border pt-4">
+                <div className="grid grid-cols-2 gap-4 text-xs font-mono border-t border-border pt-4 z-10">
                   <div className="flex flex-col gap-1 border-r border-border pr-2">
                     <span className="text-[10px] text-muted-foreground font-bold uppercase">Legacy System</span>
                     <span className="text-muted-foreground">{comp.legacy}</span>
@@ -333,7 +339,7 @@ export default function HomePage() {
                     <span className="text-foreground font-bold">{comp.forkscout}</span>
                   </div>
                 </div>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </section>
