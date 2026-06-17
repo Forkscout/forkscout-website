@@ -37,7 +37,8 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand logo */}
         <div className="flex items-center gap-4">
-          <Link href="/" className="font-display font-extrabold text-2xl tracking-tighter flex items-baseline gap-1 select-none">
+          <Link href="/" className="font-display font-extrabold text-2xl tracking-tighter flex items-center gap-2 select-none">
+            <img src="/logo.png" alt="Forkscout Logo" className="w-6 h-6 object-contain dark:invert" />
             <span>FORKSCOUT</span>
             <span className="text-xs font-mono font-medium px-1.5 py-0.5 border border-border text-accent bg-muted uppercase tracking-widest">
               org
